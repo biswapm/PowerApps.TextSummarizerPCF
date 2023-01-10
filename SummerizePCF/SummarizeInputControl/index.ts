@@ -2,7 +2,6 @@ import {IInputs, IOutputs} from "./generated/ManifestTypes";
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-
 import { TextSummarizer, ITextSummarizerProps } from './summarizer';
 
 export class SummerizeInputControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
@@ -96,8 +95,8 @@ export class SummerizeInputControl implements ComponentFramework.StandardControl
 	 * @param endPoint Endpoint for Text Analytics API
 	 */
 private getSummarizedText(parent: any, subKey: string, endPoint: string, textToSummarize:string, isSummarize: boolean): void {
-    let responseText: any, https:any;
-    https = require('https');
+    let responseText: any;
+    let https = require('https');
     let summarizePath = '/language/analyze-text/jobs?api-version=2022-10-01-preview';
     let inputDocuments = {
         'documents': [
